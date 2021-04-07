@@ -14,8 +14,8 @@ function setup() {
   world = engine.world;
   Engine.run(engine);
 
-  dustbin = new DustBin(720, 390, 100, 10);
-  ball = new ball(100, 300, 10);
+  
+ 
   ground = Bodies.rectangle(width / 2, 400, width, 10,
   {
     isStatic: true
