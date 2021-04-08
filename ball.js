@@ -1,20 +1,36 @@
-class Ball {  
-    constructor(x, y, radius){
-        var options = {
-            'restitution':0.8,
-            'friction':1.0,
-            'density':1.0,
-            'isStatic' : false
+  
+class Paper {
+    constructor(x,y,r)
+    {
+
+        var paper_options={
+
+
+            restitution:0.3,
+            friction: 0.5,
+            density:1.2,
         }
-         this.radius = radius
-        this.body = Bodies.circle(x, y, radius, options);
-	    World.add(world, this.body);
-       
+
+        this.x=x;
+        this.y=y;
+        this.r=r;
+
+        this.body = Bodies.circle(this.x,this.y,this.r/2,paper_options);
+        World.add(world,this.body);
+
+
+
+    }
+
+    display()
+    {   var paperpos =this.body.position;
+        push();
+        translate(paperpos.x, paperpos.y);
+        rectMode(CENTER);
+        strokeWeight()
+        fill("yellow");
         
-   }
-   display(){
-    fill("red");
-    ellipseMode(RADIUS);
-    ellipse(this.body.position.x, this.body.position.y, this.radius, this.radius);
-   }
+        ellipse(0, 0,this.r,this.r);
+        pop();
+    }
 }
